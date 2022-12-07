@@ -30,4 +30,4 @@ All of these menu bases are intended to elimate the use of ModMenu12. The bases 
     
 - Real Time Text Updates Example:
   - self add_option("namehere","Real Time Update Text: " +self.updateText,::actualfuntion);
-   	- self.updateText is what is updating on the menu option.
+   	- self.updateText is what is updating on the menu option. You cannot use bools on this unless you are converting them to text.
