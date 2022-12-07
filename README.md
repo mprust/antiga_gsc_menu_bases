@@ -18,7 +18,7 @@ All of these menu bases are intended to elimate the use of ModMenu12. The bases 
 
 - Creating An Option Within The Menu:
 	- self add_option("namehere","nameoffunction",::actualfuntion,"inputrequired");
-    		- Namehere is the reference name to that menu. nameoffunction is the name of the actual function. ::actualfunction is where you call the function. inputrequired is meant if you need to add additional values to that function.
+		- Namehere is the reference name to that menu. nameoffunction is the name of the actual function. ::actualfunction is where you call the function. inputrequired is meant if you need to add additional values to that function.
 
 - Creating A Toggle Option Within The Menu:
   - self add_toggle_option("namehere","nameoffunction",::actualfuntion,self.toggle_test);
