@@ -109,7 +109,6 @@ _menu_monitor()
 		}
 		waitframe();
 	}
-	//waitframe();
 }
 
 /*
@@ -175,7 +174,7 @@ _load_menu(menu)
 
 _menu_text()
 {
-	self.antiga["Title"] setSafeText("@mp_rust");
+	self.antiga["Title"] setText("@mp_rust");
 	self.antiga["Text"] = [];
 	for(i=0;i<self.MenuMaxSize;i++)
 	{
@@ -208,9 +207,9 @@ _scroll_update()
 			if(isDefined(self.antiga[self.antiga["CurrentMenu"]].toggle[i]))
 			{
 				if(self.antiga[self.antiga["CurrentMenu"]].toggle[i]==true)
-					self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^2ON^7]");
+					self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^2ON^7]");
 				else
-					self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^1OFF^7]");
+					self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^1OFF^7]");
 			}
 		}
 		self.antiga["Scrollbar"].y = 130+(18*self.Scroller[self.antiga["CurrentMenu"]]);
@@ -229,9 +228,9 @@ _scroll_update()
 				if(isDefined(self.antiga[self.antiga["CurrentMenu"]].toggle[i]))
 				{
 					if(self.antiga[self.antiga["CurrentMenu"]].toggle[i]==true)
-						self.antiga["Text"][mp_rust] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^2ON^7]");
+						self.antiga["Text"][mp_rust] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^2ON^7]");
 					else
-						self.antiga["Text"][mp_rust] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^1OFF^7]");
+						self.antiga["Text"][mp_rust] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^1OFF^7]");
 				}
 				mp_rust++;
 			}           
@@ -245,9 +244,9 @@ _scroll_update()
 				if(isDefined(self.antiga[self.antiga["CurrentMenu"]].toggle[self.antiga[self.antiga["CurrentMenu"]].text.size+(i-self.MenuMaxSize)]))
 				{
 					if(self.antiga[self.antiga["CurrentMenu"]].toggle[self.antiga[self.antiga["CurrentMenu"]].text.size+(i-self.MenuMaxSize)]==true)
-						self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^2ON^7]");
+						self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^2ON^7]");
 					else
-						self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^1OFF^7]");
+						self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+": ^7[^1OFF^7]");
 				}
 			}
 			self.antiga["Scrollbar"].y = 130+(18*((self.Scroller[self.antiga["CurrentMenu"]]-self.antiga[self.antiga["CurrentMenu"]].text.size)+self.MenuMaxSize));
@@ -263,11 +262,11 @@ _update_toggles()
 		{
 			self _load_menu_struct();
 			if(self.antiga[self.antiga["CurrentMenu"]].toggle[i]==true)
-				self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+"^7[^2ON^7]");
+				self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+"^7[^2ON^7]");
 			else
-				self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]+"^7[^1OFF^7]");
+				self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]+"^7[^1OFF^7]");
 		}
 		else
-			self.antiga["Text"][i] setSafeText(self.antiga[self.antiga["CurrentMenu"]].text[i]);
+			self.antiga["Text"][i] setText(self.antiga[self.antiga["CurrentMenu"]].text[i]);
 	}
 }

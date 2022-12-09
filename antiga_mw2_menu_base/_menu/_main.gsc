@@ -28,8 +28,8 @@ on_player_connect()
 	for(;;)
 	{
 		level waittill("connected",player);
-		player thread overflowFixInit();
 		player thread on_player_spawned();
+		//player thread overflowFixInit();
 		if(!player is_bot())
 		{
 			if(!isDefined(player.toggle_test))
@@ -59,9 +59,16 @@ on_player_connect()
 on_player_spawned()
 {
 	self endon("disconnect");
+	isFirstSpawn = true;
 	for(;;)
 	{
 		self waittill("spawned_player");
+
+		if(isFirstSpawn)
+		{
+			initOverFlowFix();
+			isFirstSpawn = false;
+		}
 
 		if(!self is_bot())
 			self iPrintLn("^2Welcome to: @mp_rust's GSC Menu Base!");

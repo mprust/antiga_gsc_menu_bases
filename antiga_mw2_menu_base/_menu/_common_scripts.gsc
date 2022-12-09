@@ -10,11 +10,11 @@
 
 createText(font, fontscale, align, relative, x, y, sort, color, alpha, glowColor, glowAlpha, text)
 {
-	textElem = CreateFontString( font, fontscale );
+	textElem = self CreateFontString( font, fontscale );
 	textElem setPoint( align, relative, x, y );
 	textElem.sort = sort;
 	textElem.type = "text";
-	textElem setSafeText(text);
+	textElem setText(text);
 	textElem.color = color;
 	textElem.alpha = alpha;
 	textElem.glowColor = glowColor;

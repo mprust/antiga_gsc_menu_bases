@@ -31,7 +31,6 @@ _main_struct()
 	self create_menu("submenu","Sub Menu","main");
 	self add_option("submenu","Option 1",::test_function);
 	self add_option("submenu","Option 2",::test_function);
-	
 }
 
 _player_struct()
