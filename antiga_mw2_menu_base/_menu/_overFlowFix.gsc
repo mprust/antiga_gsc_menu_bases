@@ -81,8 +81,7 @@ initOverFlowFix()
         level thread monitorOverflow();
     }
 }
- 
-// strings cache serverside -- all string entries are shared by every player
+
 monitorOverflow()
 {
     level endon("disconnect");
@@ -106,13 +105,11 @@ monitorOverflow()
 setSafeText(player, text)
 {
     stringId = player getStringId(text);
-    // if the string doesn't exist add it and get its id
     if(stringId == -1)
     {
         player addStringTableEntry(text);
         stringId = player getStringId(text);
     }
-    // update the entry for this text element
     player editTextTableEntry(self.textTableIndex, stringId);
     self setText(text);
 }
@@ -125,11 +122,10 @@ recreateText()
  
 addStringTableEntry(string)
 {
-    // create new entry
     entry = spawnStruct();
     entry.id = self.stringTableEntryCount;
     entry.string = string;
-    self.stringTable[self.stringTable.size] = entry; // add new entry
+    self.stringTable[self.stringTable.size] = entry;
     self.stringTableEntryCount++;
     level.stringCount++;
 }
@@ -179,10 +175,9 @@ getStringTableEntry(id)
 purgeStringTable()
 {
     stringTable = [];
-    // store all used strings
     foreach(entry in self.textTable)
         stringTable[stringTable.size] = getStringTableEntry(entry.stringId);
-    self.stringTable = stringTable; // empty array
+    self.stringTable = stringTable;
 }
  
 purgeTextTable()
